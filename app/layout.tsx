@@ -3,7 +3,7 @@ import { Inter, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GlowBackground } from "@/components/GlowBackground";
-import { site } from "@/lib/site";
+import { site, absoluteUrl } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,11 +41,20 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
+    images: [
+      {
+        url: absoluteUrl("/opengraph-image.png"),
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — ${site.tagline}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
+    images: [absoluteUrl("/twitter-image.png")],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: site.url },
