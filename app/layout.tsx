@@ -33,7 +33,9 @@ export const metadata: Metadata = {
   },
   description: site.description,
   keywords: [...site.keywords],
-  authors: [{ name: site.author }],
+  authors: [{ name: site.author, url: site.authorUrl }],
+  creator: site.author,
+  publisher: site.author,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -73,6 +75,17 @@ const jsonLd = {
   programmingLanguage: "Python",
   license: "https://opensource.org/licenses/MIT",
   applicationCategory: "DeveloperApplication",
+  author: {
+    "@type": "Person",
+    name: site.author,
+    url: site.authorUrl,
+    sameAs: [site.authorUrl, site.authorLinkedIn],
+  },
+  maintainer: {
+    "@type": "Person",
+    name: site.author,
+    url: site.authorUrl,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

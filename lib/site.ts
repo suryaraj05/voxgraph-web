@@ -5,6 +5,11 @@ export const site = {
     "Open-source Python starter kit: WebSocket audio in, Deepgram STT, LLM (Gemini or Ollama), TTS out — with episodic memory and a live mic client. Fork it, plug in your keys, ship your voice agent.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://voxgraph-web.vercel.app",
   github: "https://github.com/suryaraj05/voxgraph",
+  githubWeb: "https://github.com/suryaraj05/voxgraph-web",
+  author: process.env.NEXT_PUBLIC_AUTHOR_NAME ?? "Surya Raj",
+  authorUrl: process.env.NEXT_PUBLIC_AUTHOR_URL ?? "https://github.com/suryaraj05",
+  authorLinkedIn:
+    process.env.NEXT_PUBLIC_AUTHOR_LINKEDIN ?? "https://www.linkedin.com/in/salve-surya-raj",
   keywords: [
     "voice AI",
     "speech to text",
@@ -18,7 +23,6 @@ export const site = {
     "conversational AI",
     "Python voice agent",
   ],
-  author: "VoxGraph",
 } as const;
 
 export function absoluteUrl(path: string) {

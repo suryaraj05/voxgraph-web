@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { docsNav } from "@/lib/docs-nav";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Documentation",
@@ -20,6 +21,17 @@ export default function DocsIndexPage() {
       <p>
         This guide covers setup, the WebSocket protocol, configuration, memory, and how to customize
         the codebase for production experiments.
+      </p>
+      <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+        VoxGraph is an open-source project by{" "}
+        <a href={site.authorUrl} target="_blank" rel="noopener noreferrer">
+          {site.author}
+        </a>
+        . Backend:{" "}
+        <a href={site.github} target="_blank" rel="noopener noreferrer">
+          voxgraph
+        </a>
+        .
       </p>
 
       {docsNav.map((section) => (

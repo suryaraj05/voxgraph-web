@@ -23,7 +23,15 @@ export default function HomePage() {
         <div className="relative mx-auto grid w-full max-w-[1400px] items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
           <div>
             <p className="mb-5 font-mono text-xs tracking-wide text-accent-bright sm:text-sm">
-              Open source · MIT · Python 3.10+
+              Open source · MIT · Python 3.10+ · by{" "}
+              <a
+                href={site.authorUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-accent/40 underline-offset-2 hover:decoration-accent-bright"
+              >
+                {site.author}
+              </a>
             </p>
             <h1 className="section-title max-w-3xl text-[36px] leading-[1.15] sm:text-[44px] lg:text-[52px]">
               Voice AI pipeline you can fork, not rebuild
