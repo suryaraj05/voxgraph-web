@@ -37,7 +37,7 @@ GEMINI_MODEL=gemini-2.5-flash`}</pre>
       <h2>Customizing prompts</h2>
       <p>
         Edit <code>build_system_prompt()</code> and <code>build_gemini_prompt()</code> in{" "}
-        <code>llm_providers.py</code>. The system prompt enforces:
+        <code>voxgraph/providers/llm.py</code>. The system prompt enforces:
       </p>
       <ul>
         <li>Assistant vs user identity (&quot;your name&quot; vs &quot;my name&quot;)</li>

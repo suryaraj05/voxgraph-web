@@ -24,33 +24,45 @@ export default function ArchitecturePage() {
         <table>
           <thead>
             <tr>
-              <th>File</th>
+              <th>Module</th>
               <th>Role</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><code>voxgraph.py</code></td>
-              <td>FastAPI app, WebSocket handler, debounce, response pipeline</td>
+              <td><code>voxgraph/api/audio.py</code></td>
+              <td>WebSocket handler, Deepgram STT stream, debounce, response pipeline</td>
             </tr>
             <tr>
-              <td><code>llm_providers.py</code></td>
+              <td><code>voxgraph/api/config.py</code></td>
+              <td>Hosted setup: <code>/config/health</code>, <code>/config/test</code>, <code>/config/apply</code></td>
+            </tr>
+            <tr>
+              <td><code>voxgraph/providers/llm.py</code></td>
               <td>Gemini + Ollama streaming, system prompt, chat history</td>
             </tr>
             <tr>
-              <td><code>tts_providers.py</code></td>
+              <td><code>voxgraph/providers/tts.py</code></td>
               <td>Deepgram Aura TTS, phrase chunking, PCM streaming</td>
             </tr>
             <tr>
-              <td><code>memory_store.py</code></td>
+              <td><code>voxgraph/pipeline/response.py</code></td>
+              <td>Orchestrates STT → memory → LLM → TTS for each utterance</td>
+            </tr>
+            <tr>
+              <td><code>voxgraph/voice/utterance.py</code></td>
+              <td>Debouncing, barge-in, pending utterance staging</td>
+            </tr>
+            <tr>
+              <td><code>voxgraph/memory/store.py</code></td>
               <td>SQLite semantic facts + episodic turns</td>
             </tr>
             <tr>
-              <td><code>voice_intents.py</code></td>
+              <td><code>voxgraph/voice/intents.py</code></td>
               <td>Fast-path replies without LLM (names, greetings)</td>
             </tr>
             <tr>
-              <td><code>ws_outbound.py</code></td>
+              <td><code>voxgraph/transport/outbound.py</code></td>
               <td>Serialized WebSocket sends (safe concurrent send/receive)</td>
             </tr>
             <tr>
@@ -67,13 +79,15 @@ export default function ArchitecturePage() {
         <li>Deepgram callbacks: append transcripts, schedule debounced LLM task</li>
         <li>LLM/TTS runs in <code>asyncio</code> task; outbound audio via <code>WsOutbound</code> queue</li>
         <li>Keepalive pings Deepgram during long LLM+TTS so the STT stream stays open</li>
+        <li>Barge-in cancels in-flight TTS when new speech is detected</li>
       </ul>
 
       <h2>Design goals</h2>
       <ul>
-        <li><strong>Hackable</strong> — small files, clear extension points</li>
+        <li><strong>Hackable</strong> — small modules under <code>voxgraph/</code>, clear extension points</li>
         <li><strong>Local-first</strong> — Ollama + Deepgram without mandatory cloud LLM</li>
         <li><strong>Conversation-aware</strong> — episodic turns fed back as Ollama chat messages</li>
+        <li><strong>Hostable</strong> — Docker + Render; runtime config API for online demos</li>
       </ul>
     </>
   );

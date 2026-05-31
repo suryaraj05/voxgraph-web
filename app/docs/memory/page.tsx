@@ -48,7 +48,7 @@ User: <current utterance>`}</pre>
 
       <h2>Direct intents (no LLM)</h2>
       <p>
-        High-confidence phrases in <code>voice_intents.py</code> (greetings, &quot;what is my name&quot;,
+        High-confidence phrases in <code>voxgraph/voice/intents.py</code> (greetings, &quot;what is my name&quot;,
         &quot;who are you&quot;) bypass the LLM for speed and accuracy on small models.
       </p>
 
@@ -57,8 +57,8 @@ User: <current utterance>`}</pre>
 
       <h2>Extending</h2>
       <ul>
-        <li>Add extraction patterns in <code>memory_store.py</code></li>
-        <li>Call <code>memory_store.upsert_fact()</code> from your own tools</li>
+        <li>Add extraction patterns in <code>voxgraph/memory/store.py</code></li>
+        <li>Call <code>MemoryStore.upsert_fact()</code> from your own tools</li>
         <li>Replace SQLite with Postgres/Redis for multi-user production (same interface idea)</li>
       </ul>
     </>

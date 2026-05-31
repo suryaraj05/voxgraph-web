@@ -10,8 +10,8 @@ export default function ConfigurationPage() {
     <>
       <h1>Configuration</h1>
       <p>
-        Copy <code>.env.example</code> to <code>.env</code> in the project root. The server loads
-        <code> voxgraph/.env</code> on startup (overrides shell env).
+        Copy <code>.env.example</code> to <code>.env</code> in the repo root. The server loads
+        <code>.env</code> on startup (see <code>voxgraph/core/settings.py</code>).
       </p>
 
       <h2>API keys</h2>
