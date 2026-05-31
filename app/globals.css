@@ -1143,4 +1143,87 @@
   .try-setup-btn-primary:hover:not(:disabled) {
     box-shadow: 0 0 28px rgba(59, 130, 246, 0.25);
   }
+
+  .build-log-toc-list {
+    @apply mt-3 grid gap-2 sm:grid-cols-2;
+    list-style: none;
+    padding: 0;
+  }
+
+  .build-log-toc-list a {
+    @apply flex items-center justify-between rounded-lg px-3 py-2 text-sm transition;
+    color: var(--text-muted);
+    border: 1px solid transparent;
+  }
+
+  .build-log-toc-list a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .build-log-count {
+    font-family: var(--font-code-family);
+    font-size: 11px;
+    color: var(--accent-bright);
+    opacity: 0.85;
+  }
+
+  .build-log-section {
+    @apply mb-12;
+  }
+
+  .build-log-entry {
+    @apply mb-5 rounded-xl p-4 sm:p-5;
+  }
+
+  .build-log-entry-header {
+    @apply mb-4 flex items-start gap-3;
+  }
+
+  .build-log-entry-header h3 {
+    @apply !mt-0 !mb-0 text-base font-semibold leading-snug;
+    color: var(--text-primary);
+  }
+
+  .build-log-id {
+    flex-shrink: 0;
+    font-family: var(--font-code-family);
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-bright);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+  }
+
+  .build-log-dl {
+    @apply space-y-3 text-sm;
+  }
+
+  .build-log-dl dt {
+    font-family: var(--font-code-family);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 4px;
+  }
+
+  .build-log-dl dd {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .build-log-files {
+    @apply space-y-1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .build-log-files code {
+    font-size: 12px;
+  }
 }

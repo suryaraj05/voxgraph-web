@@ -16,6 +16,11 @@ export const docsNav: DocSection[] = [
       { title: "Introduction", href: "/docs", description: "What VoxGraph is and who it's for" },
       { title: "Quick start", href: "/docs/quick-start", description: "Running locally in 5 minutes" },
       { title: "Architecture", href: "/docs/architecture", description: "Pipeline and components" },
+      {
+        title: "Build log — bugs & fixes",
+        href: "/docs/build-log",
+        description: "51 backend issues and solutions",
+      },
     ],
   },
   {
