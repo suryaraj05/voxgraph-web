@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/lib/site";
 
+/** Google Search Console HTML tag verification (public token). */
+export const GOOGLE_SITE_VERIFICATION =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
+  "73dvrKsL4agg92us3MAiFTXK8ceXfEKVE_-8Zod01Dg";
+
 type PageSeoOptions = {
   title: string;
   description: string;
@@ -55,10 +60,9 @@ export function pageMetadata({
 }
 
 export function rootMetadata(): Metadata {
-  const verification: Metadata["verification"] = {};
-  if (process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION) {
-    verification.google = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
-  }
+  const verification: Metadata["verification"] = {
+    google: GOOGLE_SITE_VERIFICATION,
+  };
   if (process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION) {
     verification.other = {
       "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
@@ -114,6 +118,6 @@ export function rootMetadata(): Metadata {
     alternates: {
       canonical: site.url,
     },
-    verification: Object.keys(verification).length > 0 ? verification : undefined,
+    verification,
   };
 }
