@@ -34,7 +34,8 @@ Redeploy after any change.
 1. Go to [Google Search Console](https://search.google.com/search-console)
 2. Add property: `https://voxgraph-web.vercel.app`
 3. Verify via **HTML tag** → copy token into `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`
-4. Submit sitemap: `https://voxgraph-web.vercel.app/sitemap.xml`
+4. Submit sitemap: `https://voxgraph-web.vercel.app/sitemap.xml`  
+   (Use the **full URL** with `.xml` — not `/sitemap` alone; that path 404s.)
 5. Request indexing for:
    - `/`
    - `/about`
