@@ -27,6 +27,9 @@ export function Footer() {
             <Link href="/docs" className="nav-link">
               Documentation
             </Link>
+            <Link href="/about" className="nav-link">
+              About
+            </Link>
             <a href={site.github} target="_blank" rel="noopener noreferrer" className="nav-link">
               Backend repo
             </a>

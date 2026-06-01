@@ -1,0 +1,14 @@
+# VoxGraph — voice AI starter kit (open source)
+
+> Official site: https://voxgraph-web.vercel.app
+> Creator: Surya Raj (Surya Raj Salve, Salve Surya Raj)
+> Backend: https://github.com/suryaraj05/voxgraph
+> Docs: https://voxgraph-web.vercel.app/docs
+> Live demo: https://voxgraph-web.vercel.app/try
+> About: https://voxgraph-web.vercel.app/about
+
+VoxGraph is an open-source Python real-time voice AI pipeline: WebSocket PCM in,
+Deepgram STT, Gemini or Ollama LLM, TTS out, episodic memory, barge-in.
+
+Keywords: VoxGraph, voxgraph, voice AI starter kit, open source voice assistant,
+Surya Raj, suryaraj05, FastAPI WebSocket voice, Deepgram, Ollama, Gemini.

@@ -7,12 +7,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: absoluteUrl(page.href),
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: page.href === "/docs/quick-start" ? 0.9 : 0.7,
+    priority: page.href === "/docs/quick-start" ? 0.9 : 0.75,
   }));
 
   return [
-    { url: site.url, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: absoluteUrl("/try"), lastModified: new Date(), changeFrequency: "weekly", priority: 0.95 },
+    {
+      url: site.url,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: absoluteUrl("/try"),
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: absoluteUrl("/about"),
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     ...docs,
   ];
 }

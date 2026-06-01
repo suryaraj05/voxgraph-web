@@ -1,10 +1,19 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 import { TerminalBlock } from "@/components/TerminalBlock";
 import { PipelineDiagram } from "@/components/PipelineDiagram";
 import { PinnedCards } from "@/components/PinnedCards";
 import { HeroVisual } from "@/components/HeroVisual";
+
+export const metadata: Metadata = pageMetadata({
+  title: `${site.name} — open-source voice AI starter kit by ${site.author}`,
+  description: site.description,
+  path: "/",
+  keywords: ["VoxGraph official site", "try VoxGraph demo", "voice AI starter kit GitHub"],
+});
 
 const stack = [
   "FastAPI",
